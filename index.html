@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="X-UA-Compatible" class="page">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigenère cipher</title>
+
+  <script src="./script.js"></script>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav wrapper">
+      <h1 class="nav__item nav__title">Vigenère cipher</h1>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="main__text wrapper">
+      <textarea
+        class="main__text-item"
+        id="encrypted"
+        placeholder="Encrypted Text"
+        form="form"
+      ></textarea>
+
+      <textarea
+        class="main__text-item"
+        id="decrypted"
+        placeholder="Decrypted Text"
+        form="form"
+      ></textarea>
+    </section>
+
+    <section class="main__info">
+      <div class="wrapper">
+        <div class="main__key-container">
+          <h2 class="main__key-title">Ключ шифрування</h2>
+          <label for="key" class="form__key">
+            <textarea
+              class="main__key-area"
+              id="key"
+              placeholder="Your key"
+              form="form"
+            ></textarea>
+          </label>
+        </div>
+
+        <div class="main__titles grid">
+          <h2 class="main__title">Мова</h2>
+          <h2 class="main__title">Режим</h2>
+        </div>
+
+        <form class="main__form" name="form" id="form">
+          <div class="form__infographic grid">
+            <div class="form__language">
+              <label for="engLang" class="form__language-item">
+                <input
+                  type="radio"
+                  name="language"
+                  id="engLang"
+                  class="form__language-input"
+                  value="english"
+                  checked
+                >English
+              </label>
+
+              <label for="ukrLang" class="form__language-item">
+                <input
+                  type="radio"
+                  name="language"
+                  id="ukrLang"
+                  class="form__language-input"
+                  value="ukrainian"
+                >Українська
+              </label>
+            </div>
+
+            <div class="form__mode">
+              <label for="decrypt" class="form__mode-item">
+                <input
+                  type="radio"
+                  name="mode"
+                  id="decrypt"
+                  class="form__mode-input"
+                  value="decrypt"
+                  checked
+                >Зашифрувати
+              </label>
+
+              <label for="encrypt" class="form__mode-item">
+                <input
+                  type="radio"
+                  name="mode"
+                  id="encrypt"
+                  class="form__mode-input"
+                  value="encrypt"
+                >Розшифрувати
+              </label>
+            </div>
+          </div>
+
+          <div class="form__buttons grid">
+            <button
+              type="button"
+              id="submit"
+              class="form__button form__button--submit"
+              onclick="getInput();"
+            >submit</button>
+
+            <button
+              type="button"
+              class="form__button"
+              id="reset"
+              onclick="clearForm()"
+            >reset</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <footer class="footer page__footer">
+      <div class="footer__item">Made by Illia Ostrovskiy</div>
+      <div class="footer__item">Cybersecurity</div>
+    </footer>
+  </main>
+</body>
+</html>
